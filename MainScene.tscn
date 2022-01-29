@@ -42,7 +42,64 @@ position = Vector2( 389, 575 )
 position = Vector2( 435, 575 )
 
 [node name="Tile11" parent="." instance=ExtResource( 3 )]
-position = Vector2( 481, 575 )
+position = Vector2( 458, 431 )
+
+[node name="Tile25" parent="." instance=ExtResource( 3 )]
+position = Vector2( 709, 431 )
+
+[node name="Tile26" parent="." instance=ExtResource( 3 )]
+position = Vector2( 824, 310 )
+
+[node name="Tile27" parent="." instance=ExtResource( 3 )]
+position = Vector2( 755, 431 )
+
+[node name="Tile28" parent="." instance=ExtResource( 3 )]
+position = Vector2( 527, 271 )
+
+[node name="Tile29" parent="." instance=ExtResource( 3 )]
+position = Vector2( 573, 271 )
+
+[node name="Tile30" parent="." instance=ExtResource( 3 )]
+position = Vector2( 159, 184 )
+
+[node name="Tile31" parent="." instance=ExtResource( 3 )]
+position = Vector2( 205, 184 )
+
+[node name="Tile32" parent="." instance=ExtResource( 3 )]
+position = Vector2( 137, 431 )
+
+[node name="Tile33" parent="." instance=ExtResource( 3 )]
+position = Vector2( 183, 431 )
+
+[node name="Tile34" parent="." instance=ExtResource( 3 )]
+position = Vector2( 343, 287 )
+
+[node name="Tile35" parent="." instance=ExtResource( 3 )]
+position = Vector2( 389, 287 )
+
+[node name="Tile36" parent="." instance=ExtResource( 3 )]
+position = Vector2( 641, 130 )
+
+[node name="Tile37" parent="." instance=ExtResource( 3 )]
+position = Vector2( 687, 130 )
+
+[node name="Tile38" parent="." instance=ExtResource( 3 )]
+position = Vector2( 939, 264 )
+
+[node name="Tile39" parent="." instance=ExtResource( 3 )]
+position = Vector2( 985, 264 )
+
+[node name="Tile40" parent="." instance=ExtResource( 3 )]
+position = Vector2( 343, 107 )
+
+[node name="Tile41" parent="." instance=ExtResource( 3 )]
+position = Vector2( 389, 107 )
+
+[node name="Tile42" parent="." instance=ExtResource( 3 )]
+position = Vector2( 343, 107 )
+
+[node name="Tile43" parent="." instance=ExtResource( 3 )]
+position = Vector2( 389, 107 )
 
 [node name="Tile12" parent="." instance=ExtResource( 3 )]
 position = Vector2( 527, 575 )
