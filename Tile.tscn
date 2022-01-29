@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Terrain/Terrain (16x16).png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 23, 23 )
+
+[node name="Tile" type="StaticBody2D"]
+
+[node name="GrassGround" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+normal_map = SubResource( 1 )
+region_enabled = true
+region_rect = Rect2( 97, 0, 46, 46 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
