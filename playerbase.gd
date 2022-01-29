@@ -28,7 +28,6 @@ func _process(delta):
 		sprite.play("run")
 	else:
 		sprite.play("idle")
-	scale(1.01)
 
 func _physics_process(delta):
 	#vel.x = 0
