@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Area2D",
+"class": "Collectable",
+"language": "GDScript",
+"path": "res://Collectable.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerBase",
+"language": "GDScript",
+"path": "res://playerbase.gd"
+} ]
+_global_script_class_icons={
+"Collectable": "",
+"PlayerBase": ""
+}
+
 [application]
 
 config/name="Ggj-bootstrap"

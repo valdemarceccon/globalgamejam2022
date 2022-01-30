@@ -1,11 +1,19 @@
 extends KinematicBody2D
 
+class_name PlayerBase
+
+var score_callback:FuncRef = null
+
 var score:int = 0
 
 var speed:int = 200
 var jumpFoce:int = 700
 var gravity:int = 1600
 var speep_wall_jump: int = 2000
+var collected: Area2D = null
+
+
+signal hit
 
 var move_left: String = "move_left2"
 var move_right: String = "move_right2"
@@ -27,6 +35,8 @@ func scale(ratio: float):
 	colisao.transform.y *= ratio
 
 func _process(delta):
+	if collected:
+		collected.position = self.position
 	if vel.x != 0:
 		sprite.play("run")
 	else:
@@ -65,3 +75,15 @@ func _physics_process(delta):
 	elif vel.x > 0:
 		sprite.flip_h = false
 
+func collect(fire: Area2D):
+	print(self)
+	collected = fire
+
+func increase_score():
+	print(collected)
+	if collected:
+		score += 1
+		if score_callback:
+			score_callback.call_func(score)
+		collected.reset()
+		collected = null
