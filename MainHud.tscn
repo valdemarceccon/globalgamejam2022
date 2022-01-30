@@ -52,3 +52,37 @@ margin_right = 113.0
 margin_bottom = 16.0
 text = "0"
 align = 2
+
+[node name="WinnerDisplay" type="MarginContainer" parent="."]
+visible = false
+margin_left = 256.0
+margin_top = 256.0
+margin_right = 480.0
+margin_bottom = 274.0
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="WinnerDisplay"]
+margin_top = 2.0
+margin_right = 224.0
+margin_bottom = 16.0
+text = "Winner"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_left = 384.0
+margin_top = 296.0
+margin_right = 449.0
+margin_bottom = 316.0
+rect_scale = Vector2( 3, 3 )
+text = "RESTART"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
