@@ -1,8 +1,9 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://PlayerFire.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/00Atlas.png" type="Texture" id=2]
 [ext_resource path="res://MainScene.gd" type="Script" id=3]
+[ext_resource path="res://PlayerIce.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MainHud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/00Atlas-snow.png" type="Texture" id=6]
 [ext_resource path="res://assets/00Atlas-fire.png" type="Texture" id=7]
@@ -1001,3 +1002,7 @@ move_left = "move_left1"
 move_right = "move_right1"
 jump = "jump1"
 type = 1
+
+[node name="ColdPlayer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 595, 534 )
+scale = Vector2( 2, 2 )
