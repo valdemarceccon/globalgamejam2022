@@ -10,6 +10,7 @@ var speed:int = 200
 var jumpFoce:int = 700
 var gravity:int = 1600
 var speep_wall_jump: int = 2000
+var other = null
 
 export var move_left: String = ""
 export var move_right: String = ""
@@ -92,9 +93,17 @@ func increase_score():
 	for c in collected:
 		if c.type == type:
 			score += 1
+		if c.type != type:
+			if other:
+				other.decrease_score()
 	if score_callback:
 		score_callback.call_func(score)
 	release_collectable()
+
+func decrease_score():
+	if score > 0:
+		score -= 1
+		score_callback.call_func(score)
 
 func release_collectable():
 	for col in collected:

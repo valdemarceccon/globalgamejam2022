@@ -8,6 +8,8 @@ func _ready():
 	$Hud.parent = self
 	$HotPlayer.score_callback = funcref($Hud, "update_hot")
 	$ColdPlayer.score_callback = funcref($Hud, "update_cold")
+	$HotPlayer.other = $ColdPlayer
+	$ColdPlayer.other = $HotPlayer
 
 func _process(delta):
 	if playing:

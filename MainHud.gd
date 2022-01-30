@@ -17,7 +17,6 @@ func winner(win: String):
 	$WinnerDisplay/Label.text = "Winner %s" % win
 	$Button.show()
 
-
 func _on_Button_pressed():
 	if parent:
 		parent.reset_game()

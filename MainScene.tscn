@@ -963,6 +963,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource( 3 )
+win_score = 10
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2( 160, 0 )
