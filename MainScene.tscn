@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://PlayerFire.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/00Atlas.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/00Atlas-fire.png" type="Texture" id=7]
 [ext_resource path="res://Collectable.tscn" type="PackedScene" id=8]
 [ext_resource path="res://SafeZone.tscn" type="PackedScene" id=9]
+[ext_resource path="res://PlayerBase.gd" type="Script" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -977,14 +978,6 @@ type = 1
 [node name="CollectableCold" parent="." instance=ExtResource( 8 )]
 position = Vector2( 641, 290 )
 
-[node name="ColdPlayer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 707, 425 )
-scale = Vector2( 2, 2 )
-
-[node name="HotPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 198, 598 )
-scale = Vector2( 2, 2 )
-
 [node name="Hud" parent="." instance=ExtResource( 5 )]
 
 [node name="SafeZoneHot" parent="." instance=ExtResource( 9 )]
@@ -995,3 +988,26 @@ safe_zone_type = 1
 [node name="SafeZoneCold" parent="." instance=ExtResource( 9 )]
 position = Vector2( 863, 544 )
 scale = Vector2( 6.61912, 6.21502 )
+
+[node name="Collectable2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 511, 216 )
+
+[node name="Collectable" parent="." instance=ExtResource( 8 )]
+position = Vector2( 571, 410 )
+type = 1
+
+[node name="HotPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 198, 598 )
+scale = Vector2( 2, 2 )
+move_left = "move_left1"
+move_right = "move_right1"
+jump = "jump1"
+type = 1
+
+[node name="ColdPlayer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 750, 598 )
+scale = Vector2( 2, 2 )
+script = ExtResource( 10 )
+move_left = "move_left2"
+move_right = "move_right2"
+jump = "jump2"

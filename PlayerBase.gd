@@ -10,14 +10,14 @@ var speed:int = 200
 var jumpFoce:int = 700
 var gravity:int = 1600
 var speep_wall_jump: int = 2000
-var collected: Collectable = null
 
+export var move_left: String = ""
+export var move_right: String = ""
+export var jump: String = ""
 
-signal hit
+export (Collectable.FIRE_TYPE) var type = Collectable.FIRE_TYPE.cold
 
-var move_left: String = "move_left2"
-var move_right: String = "move_right2"
-var jump: String = "jump2"
+var collected = []
 
 var jump_count: int = 0
 
@@ -39,12 +39,13 @@ func scale(ratio: float):
 	colisao.transform.y *= ratio
 
 func _process(delta):
-	if collected:
-		collected.position = self.position
 	if vel.x != 0:
 		sprite.play("run")
 	else:
 		sprite.play("idle")
+	
+	for col in collected:
+		col.position = position
 
 func _physics_process(delta):
 	if is_on_floor() or is_on_wall():
@@ -79,26 +80,24 @@ func _physics_process(delta):
 	elif vel.x > 0:
 		sprite.flip_h = false
 
-func collect(fire: Collectable):
-	print(self)
-	collected = fire
+func collect(fire):
+	if collected.find(fire) == -1:
+		collected.append(fire)
 
 func increase_score():
-	print(collected)
-	if collected:
-		score += 1
-		if score_callback:
-			score_callback.call_func(score)
-	release_collected()
+	for c in collected:
+		if c.type == type:
+			score += 1
+	if score_callback:
+		score_callback.call_func(score)
+	release_collectable()
 
-
-func release_collected():
-	if collected:
-		collected.reset()
-		collected = null
+func release_collectable():
+	for col in collected:
+		col.reset()
+	collected.clear()
+	
 
 func die():
-	print(self, "died")
-	print(collected)
-	release_collected()
 	position = initial_position
+	release_collectable()
