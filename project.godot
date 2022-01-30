@@ -18,10 +18,22 @@ _global_script_classes=[ {
 "class": "PlayerBase",
 "language": "GDScript",
 "path": "res://playerbase.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerFire",
+"language": "GDScript",
+"path": "res://PlayerFire.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "PlayerIce",
+"language": "GDScript",
+"path": "res://PlayerIce.gd"
 } ]
 _global_script_class_icons={
 "Collectable": "",
-"PlayerBase": ""
+"PlayerBase": "",
+"PlayerFire": "",
+"PlayerIce": ""
 }
 
 [application]

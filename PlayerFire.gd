@@ -1,6 +1,6 @@
 extends "res://playerbase.gd"
 
-
+class_name PlayerFire
 
 func _init():
 	colisao_name = "CollisionShape2D"

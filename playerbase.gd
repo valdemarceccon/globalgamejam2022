@@ -10,7 +10,7 @@ var speed:int = 200
 var jumpFoce:int = 700
 var gravity:int = 1600
 var speep_wall_jump: int = 2000
-var collected: Area2D = null
+var collected: Collectable = null
 
 
 signal hit
@@ -27,6 +27,10 @@ var colisao_name = "colisao"
 
 onready var sprite: AnimatedSprite = get_node("Sprite")
 onready var colisao: CollisionShape2D = get_node(colisao_name)
+onready var initial_position: Vector2 = Vector2()
+
+func _ready():
+	initial_position = position
 
 func scale(ratio: float):
 	sprite.transform.x *= ratio 
@@ -75,7 +79,7 @@ func _physics_process(delta):
 	elif vel.x > 0:
 		sprite.flip_h = false
 
-func collect(fire: Area2D):
+func collect(fire: Collectable):
 	print(self)
 	collected = fire
 
@@ -85,5 +89,16 @@ func increase_score():
 		score += 1
 		if score_callback:
 			score_callback.call_func(score)
+	release_collected()
+
+
+func release_collected():
+	if collected:
 		collected.reset()
 		collected = null
+
+func die():
+	print(self, "died")
+	print(collected)
+	release_collected()
+	position = initial_position

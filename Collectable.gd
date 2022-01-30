@@ -13,7 +13,7 @@ func _ready():
 	if type == FIRE_TYPE.hot:
 		$HotFire.emitting = true
 	
-	initial_position = self.position
+	initial_position = position
 	
 
 func _on_Collectable_body_entered(body):
@@ -26,4 +26,5 @@ func score(safe_zone):
 	self.body.increase_score()
 
 func reset():
+	print("should reset")
 	position = initial_position
