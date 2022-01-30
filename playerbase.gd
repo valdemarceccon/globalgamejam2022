@@ -29,6 +29,8 @@ onready var sprite: AnimatedSprite = get_node("Sprite")
 onready var colisao: CollisionShape2D = get_node(colisao_name)
 onready var initial_position: Vector2 = Vector2()
 
+
+
 func _ready():
 	initial_position = position
 
@@ -47,6 +49,7 @@ func _process(delta):
 		sprite.play("idle")
 
 func _physics_process(delta):
+	
 	if is_on_floor() or is_on_wall():
 		jump_count = 0
 	
@@ -58,6 +61,7 @@ func _physics_process(delta):
 		vel.x = 0	
 	
 	vel = move_and_slide(vel, Vector2.UP)
+
 	
 	vel.y += gravity * delta
 	if Input.is_action_just_pressed(jump) and (is_on_floor() or jump_count < 1):

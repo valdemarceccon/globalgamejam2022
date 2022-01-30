@@ -1,9 +1,8 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://PlayerFire.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/00Atlas.png" type="Texture" id=2]
 [ext_resource path="res://MainScene.gd" type="Script" id=3]
-[ext_resource path="res://PlayerIce.tscn" type="PackedScene" id=4]
 [ext_resource path="res://MainHud.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/00Atlas-snow.png" type="Texture" id=6]
 [ext_resource path="res://assets/00Atlas-fire.png" type="Texture" id=7]
@@ -64,14 +63,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 [sub_resource type="ConvexPolygonShape2D" id=23]
 points = PoolVector2Array( 0, 0, 16, 0, 0, 16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=24]
-points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
+[sub_resource type="ConvexPolygonShape2D" id=47]
+points = PoolVector2Array( 15.4915, 15.6297, 0.374557, 15.6297, 0.374557, 4.23383, 15.9566, 4.23383 )
 
 [sub_resource type="ConvexPolygonShape2D" id=45]
 points = PoolVector2Array( 2.09508, 15.7793, 15.6885, 5.68522, 15.8231, 15.7793 )
 
-[sub_resource type="ConvexPolygonShape2D" id=46]
-points = PoolVector2Array( 16, 16, 0.134995, 16, 0.134995, 0.249847, 16, 0.249847 )
+[sub_resource type="ConvexPolygonShape2D" id=48]
+points = PoolVector2Array( 15.724, 15.6769, 0.374557, 16, 0.374557, 1.02507, 15.724, 1.02507 )
 
 [sub_resource type="ConvexPolygonShape2D" id=27]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -672,14 +671,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 25/navigation_offset = Vector2( 0, 0 )
 25/shape_offset = Vector2( 0, 0 )
 25/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-25/shape = SubResource( 24 )
+25/shape = SubResource( 47 )
 25/shape_one_way = false
 25/shape_one_way_margin = 1.0
 25/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 24 ),
+"shape": SubResource( 47 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 25/z_index = 0
@@ -714,14 +713,14 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 27/navigation_offset = Vector2( 0, 0 )
 27/shape_offset = Vector2( 0, 0 )
 27/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-27/shape = SubResource( 46 )
+27/shape = SubResource( 48 )
 27/shape_one_way = true
 27/shape_one_way_margin = 1.0
 27/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": true,
 "one_way_margin": 1.0,
-"shape": SubResource( 46 ),
+"shape": SubResource( 48 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 27/z_index = 0
@@ -976,10 +975,6 @@ type = 1
 
 [node name="CollectableCold" parent="." instance=ExtResource( 8 )]
 position = Vector2( 641, 290 )
-
-[node name="ColdPlayer" parent="." instance=ExtResource( 4 )]
-position = Vector2( 707, 425 )
-scale = Vector2( 2, 2 )
 
 [node name="HotPlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 198, 598 )
